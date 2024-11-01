@@ -51,6 +51,10 @@ app.get("/", limit100Req15Min, (req, res) => {
 // --------------------------
 // Section: API Versioning Router(s)
 // --------------------------
+
+// --------------------------
+// Section: Default Error Handlers
+// --------------------------
 app.use((req, res, next) => {
   next(createError(404, "This directory does not exist!⛔"));
 });
