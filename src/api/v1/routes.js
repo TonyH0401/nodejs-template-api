@@ -23,8 +23,8 @@ const {
 // Section: Routers
 // --------------------------
 // User Routers: /api/v1/users/...
-// const UsersRouter = require("./Users/UsersRouter");
-// router.use("/users", UsersRouter);
+const UsersRouter = require("./Users/UsersRouter");
+router.use("/users", UsersRouter);
 
 // --------------------------
 // Section: Exports
