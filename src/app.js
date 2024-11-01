@@ -13,6 +13,7 @@ const chalk = require("chalk");
 // --------------------------
 // Section: Custom Utils Requirements
 // --------------------------
+const { limit10Req5Min, limit100Req15Min } = require("./utils/requestLimit");
 
 // --------------------------
 // Section: Environment Variables
@@ -37,7 +38,7 @@ app.use(helmet());
 // --------------------------
 // Section: Default Router(s)
 // --------------------------
-app.get("/", (req, res) => {
+app.get("/", limit10Req5Min, (req, res) => {
   return res.status(200).json({
     code: 1,
     success: true,
