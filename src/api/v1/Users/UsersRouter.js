@@ -15,6 +15,7 @@ const createError = require("http-errors");
 // --------------------------
 // Section: Users Middlewares
 // --------------------------
+const { createUser } = require("./UsersMiddleware");
 
 // --------------------------
 // Section: Users Routers
@@ -26,13 +27,17 @@ router.route("/").get((req, res) => {
     message: "Default branch 🥚 of /users! ",
   });
 });
-// router.route("/create").post(validateUser, createUser);
-// router.route("/all").get(getAllUsers);
-// router
-//   .route("/user/:userId")
-//   .get(getUserById)
-//   .patch(validateUser, patchUserById)
-//   .delete(deleteUserById);
+router.route("/create").post(createUser);
+/* 
+I define and group other routes as follow:
+
+router.route("/all").get(getAllUsers);
+router
+  .route("/user/:userId")
+  .get(getUserById)
+  .patch(validateUser, patchUserById)
+  .delete(deleteUserById);
+*/
 
 // --------------------------
 // Section: Users Error Handlers
