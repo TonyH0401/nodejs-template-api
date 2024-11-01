@@ -38,7 +38,7 @@ app.use(helmet());
 // --------------------------
 // Section: Default Router(s)
 // --------------------------
-app.get("/", limit10Req5Min, (req, res) => {
+app.get("/", limit100Req15Min, (req, res) => {
   return res.status(200).json({
     code: 1,
     success: true,
