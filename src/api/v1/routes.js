@@ -24,7 +24,7 @@ const {
 // --------------------------
 // User Routers: /api/v1/users/...
 const UsersRouter = require("./Users/UsersRouter");
-router.use("/users", UsersRouter);
+router.use("/users", limit100Req15Min, UsersRouter);
 
 // --------------------------
 // Section: Exports
