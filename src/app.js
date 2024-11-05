@@ -27,6 +27,10 @@ const port = process.env.BE_PORT || 8080;
 const app = express();
 
 // --------------------------
+// Section: Application-wide Settings
+// --------------------------
+
+// --------------------------
 // Section: Application Usage Functions
 // --------------------------
 app.use(bodyParser.json());
